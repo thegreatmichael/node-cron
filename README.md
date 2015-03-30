@@ -4,11 +4,17 @@ node-cron
 [![Build Status](https://secure.travis-ci.org/ncb000gt/node-cron.png)](http://travis-ci.org/#!/ncb000gt/node-cron)
 [![wercker status](https://app.wercker.com/status/0cadfe5d45ad7bc819efb636026cf230/s "wercker status")](https://app.wercker.com/project/bykey/0cadfe5d45ad7bc819efb636026cf230)
 
+# Overview #
+
 Originally this project was a NodeJS fork of [James Padolsey's][jamespadolsey] [cron.js](http://github.com/padolsey/cron.js).
 
 After [Craig Condon][crcn] made some updates and changes to the code base this has evolved to something that has a bit of both. The cron syntax parsing is mostly James' while using timeout instead of interval is Craig's.
 
 Additionally, this library goes beyond the basic cron syntax and allows you to supply a Date object. This will be used as the trigger for your callback. Cron syntax is still an acceptable CronTime format. Although the Cron patterns suported here extend on the standard Unix format to support seconds digits, leaving it off will default to 0 and match the Unix behavior.
+
+## tl;dr ##
+
+This module does not modify your cron files. This module is an inprocess replacement for cron because sometimes it's nice to have the cron running in process. Therefore you must keep this node process running for the scheduled work to happen.
 
 If You Are Submitting Bugs/Issues
 =============
